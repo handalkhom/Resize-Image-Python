@@ -1,19 +1,12 @@
 from flask import Flask, render_template, request, send_file
 import cv2
 import numpy as np  # Menambahkan import NumPy
-from pydub import AudioSegment
 
 app = Flask(__name__)
 
 # Fungsi untuk melakukan resize gambar menggunakan OpenCV
 def resize_image(image, new_width, new_height):
     return cv2.resize(image, (new_width, new_height))
-
-# Fungsi untuk melakukan kompresi audio menggunakan Pydub
-def compress_audio(audio_file, bitrate):
-    audio = AudioSegment.from_file(audio_file)
-    compressed_audio = audio.set_frame_rate(bitrate)
-    return compressed_audio
 
 @app.route('/')
 def index():
