@@ -1,0 +1,69 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(255, 244, 218, 1);
+  color: #353535; /* Warna teks putih */
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #ffd14a; /* Warna latar belakang bagian */
+  border-radius: 8px; /* Membuat sudut elemen menjadi melengkung */
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input[type="file"] {
+  width: calc(100% - 10px); /* Mengatur lebar input file */
+  margin-top: 5px;
+}
+
+.image-preview-container {
+  margin-bottom: 10px;
+}
+
+.image-preview {
+  max-width: 300px;
+  max-height: 300px;
+  display: block;
+  margin: 10px;
+}
+
+.image-info {
+  margin-bottom: 10px;
+}
+
+footer {
+  display: table;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #fff4da;
+  color: #353535;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffffff;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Pemrosesan Gambar dan Audio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Normalisasi CSS -->
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Gaya CSS kustom -->
+</head>
+
+<body>
+    <div class="container">
+        <h1>Gambar Resizer</h1>
+
+        <div class="section">
+            <h2>Resize Gambar</h2>
+            <form action="/resize_image" method="post" enctype="multipart/form-data">
+                <input type="file" name="image" id="image-input" accept="image/*" required
+                    onchange="previewImage(event)">
+                <div class="image-preview-container">
+                    <img id="preview-image" src="#" alt="Preview" class="image-preview">
+                </div>
+                <div class="image-info">
+                    <span id="original-size">Ukuran awal: -</span>
+                    <br>
+                    Lebar: <input type="number" name="width" required>
+                    Tinggi: <input type="number" name="height" required>
+                </div>
+                <button type="submit">Resize Gambar</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created by Handal Khomsyat - 1217050061</p>
+    </footer>
+
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var img = document.getElementById('preview-image');
+                img.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+
+            var fileSize = event.target.files[0].size;
+            var imageSize = Math.round(fileSize / 1024); // Mengonversi byte ke kilobyte
+            document.getElementById('original-size').innerText = 'Ukuran awal: ' + imageSize + ' KB';
+        }
+    </script>
+</body>
+
+</html>
